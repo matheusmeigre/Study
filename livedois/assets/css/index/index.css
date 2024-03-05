@@ -1,0 +1,6 @@
+/* Global */
+@import '../global/global.css';
+
+/* Partials */
+@import './partials/nav.css';
+@import './partials/sectionApresentacao.css';

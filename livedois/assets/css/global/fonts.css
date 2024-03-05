@@ -1,0 +1,22 @@
+/* Fontes */
+@font-face {
+  font-family: 'figtree-light';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('../../files/fonts/Figtree-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'figtree-bold';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('../../files/fonts/Figtree-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'bebasneue';
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+  src: url('../../files/fonts/BebasNeue-Regular.woff') format('woff');
+}

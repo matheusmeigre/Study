@@ -1,0 +1,447 @@
+section.apresentacao {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: calc(100% - 250px);
+  margin-left: auto;
+  min-height: 100dvh;
+}
+section.apresentacao button.menu {
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  background-color: transparent;
+  z-index: 20;
+}
+section.apresentacao button.menu:hover span {
+  box-shadow: 0 0 10px 3px #fff;
+}
+section.apresentacao button.menu span {
+  position: absolute;
+  right: 0;
+  height: 3px;
+  background-color: var(--cor-branco);
+  transition: all 1s;
+}
+section.apresentacao button.menu span.um {
+  width: 60px;
+  top: 20px;
+}
+section.apresentacao button.menu span.dois {
+  width: 40px;
+  bottom: 20px;
+}
+section.apresentacao button.menu.ativo span.um {
+  transform: rotate(45deg);
+  top: 28px;
+}
+section.apresentacao button.menu.ativo span.dois {
+  transform: rotate(-45deg);
+  width: 60px;
+  bottom: 28px;
+}
+/* Mundo */
+.mundo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 800px;
+  left: 80px;
+  transition: all 2s;
+}
+.mundo .conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: radial-gradient(circle, #34E1FE 0%, #325F91 80%);
+  animation: backgroundRadial 200s linear infinite;
+  transition: all 2s;
+}
+@keyframes backgroundRadial {
+  0% {
+    background-position: 700px 700px;
+  }
+  50% {
+    background-position: 2000px 700px;
+  }
+  100% {
+    background-position: 700px 700px;
+  }
+}
+.mundo .conteudo img.mascara {
+  width: 100%;
+  z-index: 3;
+}
+.mundo .conteudo img.paises {
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  animation: paises 400s linear infinite;
+}
+@keyframes paises {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-2500px, 0) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+.mundo .conteudo img.blush {
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  animation: blush 30s ease-in-out infinite;
+}
+@keyframes blush {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.mundo .circulo {
+  position: absolute;
+  border: 1px solid #34E1FE;
+  border-radius: 50%;
+  z-index: 5;
+  transition: all 2s;
+}
+.mundo .circulo.um {
+  width: 850px;
+  min-width: 850px;
+  height: 850px;
+  min-height: 850px;
+  animation: circulo 30s ease-in-out infinite;
+  border-top: 1px solid transparent;
+}
+.mundo .circulo.dois {
+  width: 950px;
+  min-width: 950px;
+  height: 950px;
+  min-height: 950px;
+  opacity: 0.3;
+  animation: circulo 20s ease-in-out infinite;
+  border-bottom: 1px solid transparent;
+}
+@keyframes circulo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+section.apresentacao.ativo .mundo {
+  width: 1400px;
+  left: -250px;
+}
+section.apresentacao.ativo .mundo .circulo.um {
+  width: 1420px;
+  min-width: 1420px;
+  height: 1420px;
+  min-height: 1420px;
+}
+section.apresentacao.ativo .mundo .circulo.dois {
+  width: 1550px;
+  min-width: 1550px;
+  height: 1550px;
+  min-height: 1550px;
+}
+/* Efeito */
+img.efeito {
+  position: absolute;
+  width: 2500px;
+  min-width: 2500px;
+  z-index: 4;
+}
+img.efeito.um {
+  bottom: -1200px;
+  right: -1200px;
+  opacity: 0.7;
+}
+img.efeito.dois {
+  top: -1500px;
+  left: -1500px;
+  opacity: 0.4;
+}
+/* Ciruclos */
+.circulos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  pointer-events: none;
+  transition: all 1s;
+}
+.circulos .circulo {
+  position: absolute;
+  border: 1px solid #34E1FE;
+  border-radius: 50%;
+  z-index: 5;
+}
+.circulos .circulo.um {
+  width: 750px;
+  min-width: 750px;
+  height: 750px;
+  min-height: 750px;
+  animation: circulo 30s ease-in-out infinite;
+  border-top: 1px solid transparent;
+}
+.circulos .circulo.dois {
+  width: 850px;
+  min-width: 850px;
+  height: 850px;
+  min-height: 850px;
+  opacity: 0.3;
+  animation: circulo 20s ease-in-out infinite;
+  border-bottom: 1px solid transparent;
+}
+section.apresentacao.ativo .circulos {
+  opacity: 0;
+  visibility: hidden;
+}
+/* Titulo */
+.titulo {
+  position: absolute;
+  left: 40%;
+  bottom: 20%;
+  z-index: 6;
+  transition: all 2s;
+}
+.titulo h2 {
+  font-family: var(--estilo);
+  font-size: 150px;
+  background: linear-gradient(to right, #ffffff, #AFF2FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  line-height: 1;
+  position: absolute;
+  left: 40px;
+  z-index: 2;
+}
+.titulo h2.um {
+  top: 40px;
+}
+.titulo h2.dois {
+  bottom: 40px;
+}
+.titulo .quadro {
+  width: 650px;
+  height: 350px;
+  background-color: #ffffff0a;
+  border: 1px solid #ffffff4a;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  transition: all 2s;
+}
+section.apresentacao.ativo .titulo {
+  left: 5%;
+  bottom: 50%;
+}
+section.apresentacao.ativo .titulo .quadro {
+  width: 400px;
+  background-color: #0000002c;
+  border: 1px solid #0000004a;
+}
+/* Icone */
+.icone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 100px;
+  top: 100px;
+  z-index: 6;
+  pointer-events: none;
+  transition: all 1s;
+}
+.icone img {
+  width: 100%;
+  max-width: 100px;
+  position: absolute;
+  z-index: 2;
+}
+.icone .quadro {
+  width: 200px;
+  height: 200px;
+  background-color: #ffffff15;
+  border: 1px solid #ffffff4a;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+section.apresentacao.ativo .icone {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+}
+/* Icone */
+.informacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: absolute;
+  bottom: 40px;
+  right: -750px;
+  padding: 40px;
+  background-color: var(--cor-branco);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 750px;
+  z-index: 8;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 2s;
+}
+.informacoes h3 {
+  font-family: var(--bold);
+  font-size: 20px;
+  color: var(--cor-preto);
+}
+.informacoes p {
+  font-family: var(--light);
+  font-size: 18px;
+  color: var(--cor-preto);
+  line-height: 1.5;
+  margin: 10px 0 30px 0;
+}
+.informacoes a {
+  font-family: var(--bold);
+  font-size: 20px;
+  color: var(--cor-branco);
+  text-align: center;
+  padding: 20px 40px;
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  background: linear-gradient(0deg, #118CD1, #36CFFF);
+  background: -webkit-linear-gradient(0deg, #118CD1, #36CFFF);
+  transition: all 0.3s;
+}
+.informacoes a:hover {
+  filter: brightness(115%);
+}
+section.apresentacao.ativo .informacoes {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  right: 40px;
+}
+/* Responsivo */
+@media screen and (max-width: 1000px) {
+  section.apresentacao {
+    width: 100%;
+  }
+  section.apresentacao button.menu {
+    top: 30px;
+    right: 30px;
+  }
+  /* Mundo */
+  .mundo {
+    width: 800px;
+    left: 80px;
+    bottom: -200px;
+  }
+  /* Efeito */
+  img.efeito {
+    width: 2000px;
+    min-width: 2000px;
+  }
+  img.efeito.um {
+    bottom: -800px;
+    right: -800px;
+  }
+  img.efeito.dois {
+    top: -1200px;
+    left: -1200px;
+  }
+  /* Titulo */
+  .titulo {
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+    z-index: 6;
+    transition: all 2s;
+  }
+  .titulo h2 {
+    font-size: 80px;
+    left: 30px;
+  }
+  .titulo h2.um {
+    top: 30px;
+  }
+  .titulo h2.dois {
+    bottom: 30px;
+  }
+  .titulo .quadro {
+    width: 350px;
+    height: 220px;
+  }
+  section.apresentacao.ativo .titulo {
+    left: 5%;
+    bottom: 60%;
+  }
+  section.apresentacao.ativo .titulo .quadro {
+    width: 300px;
+  }
+  /* Icone */
+  .icone {
+    left: 30px;
+    top: 30px;
+  }
+  .icone img {
+    max-width: 20px;
+  }
+  .icone .quadro {
+    width: 60px;
+    height: 60px;
+  }
+  /* Circulos */
+  .circulos {
+    right: auto;
+    left: 0;
+  }
+  .circulos .circulo.um {
+    width: 450px;
+    min-width: 450px;
+    height: 450px;
+    min-height: 450px;
+  }
+  .circulos .circulo.dois {
+    width: 550px;
+    min-width: 550px;
+    height: 550px;
+    min-height: 550px;
+  }
+  /* Icone */
+  .informacoes {
+    bottom: 40px;
+    right: -730px;
+    padding: 30px;
+    width: 100%;
+    max-width: calc(100% - 60px);
+  }
+  section.apresentacao.ativo .informacoes {
+    right: 30px;
+  }
+}
